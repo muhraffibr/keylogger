@@ -1,0 +1,121 @@
+{
+    "version": 1,
+    "author": "Anonymous maker",
+    "editor": "wokwi",
+    "parts": [
+        {
+            "type": "board-esp32-devkit-c-v4",
+            "id": "esp",
+            "top": 0,
+            "left": 0,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-led",
+            "id": "led1",
+            "top": 226.8,
+            "left": 32.6,
+            "attrs": {
+                "color": "red"
+            }
+        },
+        {
+            "type": "wokwi-dht22",
+            "id": "dht1",
+            "top": 0.3,
+            "left": 157.8,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-pushbutton",
+            "id": "btn1",
+            "top": 92.6,
+            "left": -134.4,
+            "attrs": {
+                "color": "green",
+                "xray": "1"
+            }
+        }
+    ],
+    "connections": [
+        [
+            "esp:TX",
+            "$serialMonitor:RX",
+            "",
+            []
+        ],
+        [
+            "esp:RX",
+            "$serialMonitor:TX",
+            "",
+            []
+        ],
+        [
+            "esp:15",
+            "dht1:SDA",
+            "green",
+            [
+                "h81.64",
+                "v-19.2",
+                "h-0.1"
+            ]
+        ],
+        [
+            "esp:3V3",
+            "dht1:VCC",
+            "green",
+            [
+                "v-48",
+                "h129.79",
+                "v134.4"
+            ]
+        ],
+        [
+            "dht1:GND",
+            "esp:GND.2",
+            "black",
+            [
+                "v9.6",
+                "h-76.8",
+                "v-96"
+            ]
+        ],
+        [
+            "btn1:1.l",
+            "esp:GND.1",
+            "green",
+            [
+                "h-19.2",
+                "v48"
+            ]
+        ],
+        [
+            "btn1:2.r",
+            "esp:12",
+            "green",
+            [
+                "h29",
+                "v19.4"
+            ]
+        ],
+        [
+            "led1:A",
+            "esp:2",
+            "green",
+            [
+                "h67.2",
+                "v-105.6"
+            ]
+        ],
+        [
+            "led1:C",
+            "esp:GND.1",
+            "green",
+            [
+                "h-76.4",
+                "v-115.2"
+            ]
+        ]
+    ],
+    "dependencies": {}
+}
