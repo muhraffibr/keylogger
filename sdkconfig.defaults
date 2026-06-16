@@ -1,0 +1,16 @@
+# Required by arduino-esp32 component
+CONFIG_FREERTOS_HZ=1000
+
+# Disable treating warnings as errors (fixes build issue with MSPI driver header warnings)
+CONFIG_COMPILER_DISABLE_DEFAULT_ERRORS=y
+
+# Percepio TraceRecorder Configuration
+CONFIG_PERCEPIO_TRACERECORDER_ENABLED=y
+CONFIG_PERCEPIO_TRC_CFG_STREAM_PORT_RINGBUFFER=y
+CONFIG_PERCEPIO_TRC_START_MODE_START=y
+CONFIG_PERCEPIO_TRC_CFG_STREAM_PORT_RINGBUFFER_SIZE=10240
+CONFIG_PERCEPIO_TRC_STREAM_PORT_RINGBUFFER_MODE_OVERWRITE_WHEN_FULL=y
+
+# Set optimization to Size (-Os) to bypass GCC internal compiler error (segfault) in esp_lcd
+CONFIG_COMPILER_OPTIMIZATION_SIZE=y
+
