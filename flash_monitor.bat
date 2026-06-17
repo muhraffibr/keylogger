@@ -8,5 +8,5 @@ set PATH=C:\Espressif\tools\ccache\4.12.1\ccache-4.12.1-windows-x86_64;C:\Espres
 echo ==========================================================
 echo [STATUS] Flashing firmware to ESP32-S3 and opening Monitor
 echo ==========================================================
-python C:\esp\v6.0.1\esp-idf\tools\idf.py -p COM6 flash monitor
+python C:\esp\v6.0.1\esp-idf\tools\idf.py -p COM8 flash monitor
 pause
